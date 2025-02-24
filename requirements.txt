@@ -1,4 +1,5 @@
 requests
 pandas
 python-dotenv
+jupyter
 openai  # Optional for AI features
