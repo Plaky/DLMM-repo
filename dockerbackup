@@ -25,3 +25,27 @@ COPY . .
 
 # Set default shell to bash
 CMD ["bash"]
+-----------------
+# second version
+# Use Python 3.12 as base image
+FROM python:3.12-slim-bullseye
+
+# Install system-level dependencies
+RUN apt-get update && apt-get install -y git
+
+# Set working directory
+WORKDIR /workspace
+
+# Copy Python dependencies and install them
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Explicitly install Jupyter (ensures it’s installed even if requirements.txt fails)
+RUN pip install --no-cache-dir jupyter
+
+# Copy project files into the container
+COPY . .
+
+# Set default shell to bash
+CMD ["bash"]
+
