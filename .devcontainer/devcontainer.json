@@ -1,7 +1,7 @@
 {
 	"name": "Python 3",
-	"dockerFile": "Dockerfile",
-	"context": ".",
+	"dockerFile": "Dockerfile",  
+	"context": "..",  
 	"customizations": {
 	  "vscode": {
 		"settings": {
@@ -9,10 +9,11 @@
 		},
 		"extensions": [
 		  "ms-python.python",
+		  "ms-toolsai.jupyter",
+		  "ms-azuretools.vscode-docker",
 		  "GitHub.copilot"
 		]
 	  }
 	},
-	"postCreateCommand": "pip install -r requirements.txt"
-  }
-  
+	"postCreateCommand": "pip install -r requirements.txt && pip install jupyter"
+}

@@ -1,0 +1,5 @@
+solana
+requests
+pytest
+solana-py
+```
