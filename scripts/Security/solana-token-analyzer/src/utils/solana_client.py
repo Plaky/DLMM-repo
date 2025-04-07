@@ -1,8 +1,8 @@
-from solana.rpc.api import Client
+from scripts.solana_client import get_client
 
 class SolanaClient:
-    def __init__(self, endpoint="https://api.mainnet-beta.solana.com"):
-        self.client = Client(endpoint)
+    def __init__(self):
+        self.client = get_client()
 
     def get_token_info(self, token_address):
         response = self.client.get_account_info(token_address)
